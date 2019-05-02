@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".view.fragments.SettingsFragment">
+
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewmodel" type="shereen.game.tictactoe.viewmodel.SettingsViewModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+            <Button android:enabled="@{viewmodel.settingsLive.singleButtonEnabled}"
+                    android:onClick="@{() -> viewmodel.singleMode()}"
+                    android:text="@string/single_mode_t"
+                    style="@style/modeButtonStyle"/>
+
+            <Button android:enabled="@{viewmodel.settingsLive.computerButtonEnabled}"
+                    android:onClick="@{() -> viewmodel.computerMode()}"
+                    android:text="@string/computer_mode_t"
+                    style="@style/modeButtonStyle"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="16dp"
+                      android:paddingStart="16dp"
+                      android:paddingEnd="16dp"
+                      android:orientation="horizontal">
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="0.7"
+                      android:layout_height="wrap_content"
+                      android:text="@string/player_1"/>
+
+            <RelativeLayout android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content">
+
+                <EditText android:layout_width="match_parent"
+                          android:visibility="@{viewmodel.settingsLive.editableTextView1? View.VISIBLE: View.GONE}"
+                          android:textColor="@color/p3_grass"
+                          android:backgroundTint="@color/p3_grass"
+                          android:imeOptions="actionDone"
+                          android:singleLine="true"
+                          android:text="@={viewmodel.playerA}"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="@{viewmodel.playerA}"
+                          android:visibility="@{viewmodel.settingsLive.editableTextView1? View.GONE: View.VISIBLE}"
+
+                />
+            </RelativeLayout>
+
+
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight="0.4"
+                         android:layout_marginStart="4dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@color/white"
+                         android:onClick="@{() -> viewmodel.editFirstPlayer()}"
+                         android:src="@{viewmodel.settingsLive.editableTextView1? @drawable/checked : @drawable/edit}"
+                         android:layout_height="40dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="8dp"
+                      android:paddingStart="16dp"
+                      android:paddingEnd="16dp"
+                      android:orientation="horizontal">
+
+            <TextView android:layout_width="0dp"
+                      android:layout_weight="0.7"
+                      android:layout_height="wrap_content"
+                      android:text="@string/player_2"/>
+
+            <RelativeLayout android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content">
+
+                <EditText android:layout_width="match_parent"
+                          android:visibility="@{viewmodel.settingsLive.editableTextView2? View.VISIBLE: View.GONE}"
+                          android:textColor="@color/p3_grass"
+                          android:backgroundTint="@color/p3_grass"
+                          android:singleLine="true"
+                          android:text="@={viewmodel.playerB}"
+                          android:imeOptions="actionDone"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="@{viewmodel.playerB}"
+                          android:visibility="@{viewmodel.settingsLive.editableTextView2? View.GONE: View.VISIBLE}"
+
+                />
+            </RelativeLayout>
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight="0.4"
+                         android:layout_marginStart="4dp"
+                         android:layout_marginEnd="8dp"
+                         android:background="@color/white"
+                         android:onClick="@{() -> viewmodel.editSecondPlayer()}"
+                         android:src="@{viewmodel.settingsLive.editableTextView2? @drawable/checked : @drawable/edit}"
+                         android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_marginTop="16dp"
+                      android:visibility="gone"
+                      android:paddingStart="16dp"
+                      android:paddingEnd="16dp">
+
+            <Button android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:layout_height="wrap_content"
+            android:text="@string/computer_plays_first"/>
+
+            <Button android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="player plays first"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</layout>

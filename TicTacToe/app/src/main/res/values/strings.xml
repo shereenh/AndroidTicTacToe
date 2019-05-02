@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="player_1_wins">Player 1 wins!</string>
+    <string name="player_2_wins">Player 2 wins!</string>
+    <string name="game_over">Game Over!</string>
+    <string name="settings">Settings</string>
+    <string name="game_board">Game</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="change">change</string>
+    <string name="add_player">add player</string>
+    <string name="single_mode_t">Single \nMode</string>
+    <string name="bluetooth_mode_t">bluetooth \nmode</string>
+    <string name="wifi_mode_t">wifi \nmode</string>
+    <string name="single_mode">Single Mode</string>
+    <string name="bluetooth_mode">Bluetooth Mode</string>
+    <string name="wifi_mode">Wifi Mode</string>
+    <string name="reset">reset</string>
+    <string name="reset_score">Reset Score</string>
+    <string name="computer_mode_t">computer \nmode</string>
+    <string name="computer_plays_first">Computer Plays first</string>
+    <string name="draw">Draw!</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+</resources>
